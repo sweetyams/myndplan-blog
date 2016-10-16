@@ -63,7 +63,7 @@ var PATHS = {
     'assets/components/motion-ui/motion-ui.js',
 
     // Include your own custom scripts (located in the custom folder)
-    'assets/javascript/custom/typekit-cache.min.js',
+    'assets/javascript/custom/typekit-cache.js',
     'assets/javascript/custom/*.js',
   ],
   phpcs: [
