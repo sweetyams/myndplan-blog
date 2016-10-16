@@ -1,0 +1,46 @@
+$header-lineheights: (
+  small: (
+    'h1': 32,
+    'h2': 28,
+    'h3': 26,
+    'h4': 24,
+    'h5': 28,
+  ),
+  medium: (
+    'h1': 42,
+    'h2': 36,
+    'h3': 30,
+    'h4': 30,
+    'h5': 36,
+  ),
+);
+
+  // Heading sizes
+  @each $size, $headers in $header-lineheights {
+    @include breakpoint($size) {
+      @each $header, $font-size in $headers {
+        #{$header} {
+          line-height: rem-calc($font-size);
+        }
+      }
+    }
+  }
+
+  p{
+    font-size: 1.3em;
+  }
+
+  h4{
+    font-family: $body-font-family;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  h5{
+    opacity: .4;
+    text-transform: uppercase;
+    font-family: $body-font-family;
+    font-weight: 500;
+    letter-spacing: .05em;
+    margin-bottom: 0;
+  }

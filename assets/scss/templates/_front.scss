@@ -1,0 +1,460 @@
+
+
+// Featured Post
+.image{
+  border-radius: 2px;
+  position: relative;
+    @include breakpoint(small) {
+    height: 260px;
+    }
+    @include breakpoint(medium){
+     height: 324px;
+    }
+    @include breakpoint(large){
+     height: 456px;
+    }
+  img{
+      border-radius: 2px;
+      position: relative;
+      display: block;
+      
+  }
+
+  &.zoom{
+    overflow: hidden;
+    position: relative;
+    transform-origin: center center;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    
+    img{
+      top:50%;
+      transform: scale3d(1,1,1) translateZ(0) translateY(-50%);
+      transform-origin: 50% 50%;
+      transition: transform .5s ease;
+    }
+    &:hover img{
+      transform: scale3d(1.05,1.05,1) translateZ(0) translateY(-50%);
+    }
+  }
+}
+
+
+#featured{
+  margin-top: 48px;
+  .featured{
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+    @include breakpoint(large) {
+      @include grid-column(7);
+    }
+    @include breakpoint(xlarge) {
+      @include grid-column(8);
+    }
+    @include breakpoint(xxlarge) {
+      @include grid-column(9);
+    }
+    
+    .info{
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    .title,.exerpt{
+      @include breakpoint(small) {
+        @include grid-column(12);
+      }
+      @include breakpoint(large) {
+        @include grid-column(12);
+      }
+      @include breakpoint(xxlarge) {
+        @include grid-column(6);
+      }
+    }
+  }
+  .popular{
+
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+    @include breakpoint(large) {
+      @include grid-column(5);
+    }
+    @include breakpoint(xlarge) {
+      @include grid-column(4);
+    }
+    @include breakpoint(xxlarge) {
+      @include grid-column(3);
+    }
+    
+    .title{
+    padding-top: 24px;
+    text-align: center;
+  }
+  ul{
+  counter-reset: section; 
+  padding-top:30px;
+  padding-bottom: 42px;
+  padding-right: 30px;
+}
+li{
+  position: relative;
+  min-height: 42px;
+  padding-left: 81px;
+}
+li::before {
+  counter-increment: section;                /* Increment the section counter*/
+  content: counter(section); /* Display the counter */
+  font-size: 36px;
+  line-height: 36px;
+  width:51px;
+  font-family: $header-font-family;
+  text-align: right;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+  }
+
+}
+
+
+.home-posts{
+  margin-top: 52px;
+  .post{
+     @include breakpoint(small) {
+      @include grid-column(12);
+      margin-bottom: 30px;
+
+    }
+    @include breakpoint(medium) {
+      &:first-child{
+        @include grid-column(12);
+        
+      }
+      @include grid-column(6);
+      margin-bottom: 30px;
+    }
+    @include breakpoint(large) {
+      &:first-child{
+        @include grid-column(4);
+      }
+      @include grid-column(4);
+    }
+
+    .info{
+      padding-top: 30px;
+    }
+
+    .image{
+      @include breakpoint(small) {
+        height: 120px;
+       }
+       @include breakpoint(medium){
+         height: 240px;
+       }
+       @include breakpoint(large){
+         height: 220px;
+       }
+    }
+   
+  }
+}
+
+.featured-posts{
+  background: $light-gray;
+  padding-top: 42px;
+  padding-bottom: 42px;
+  margin-top: 52px;
+  h2{
+    margin-bottom: 30px;
+  }
+  .post{
+     @include breakpoint(small) {
+      @include grid-column(12);
+      margin-bottom: 30px;
+    }
+    @include breakpoint(medium) {
+
+      @include grid-column(6);
+      margin-bottom: 30px;
+    }
+    @include breakpoint(large) {
+
+      @include grid-column(6);
+    }
+
+    .info{
+      padding-top: 30px;
+    }
+
+    .image{
+      @include breakpoint(small) {
+    height: 220px;
+    }
+    @include breakpoint(medium){
+     height: 280px;
+    }
+    @include breakpoint(large){
+     height: 340px;
+    }
+    }
+   
+  }
+}
+
+.subscribe-section{
+  background: $light-gray;
+  padding-top: 78px;
+  padding-bottom: 78px;
+  margin-top: 96px;
+
+  .subscribe-content{
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+    @include breakpoint(large) {
+      @include grid-column(8);
+    }
+    @include breakpoint(xlarge) {
+      @include grid-column(6);
+      @include grid-column-position(center);
+    }
+  }
+  .subscribe{
+    padding-top: 30px;
+    @include grid-row();
+    .col{
+      
+      @include breakpoint(small) {
+        @include grid-column(12);
+        padding-left: rem-calc(7.5);
+        padding-right: rem-calc(7.5); 
+      }
+      @include breakpoint(large) {
+        @include grid-column(4);
+        padding-left: rem-calc(7.5) !important;
+        padding-right: rem-calc(7.5) !important;
+      }
+    }
+    
+  }
+  h2{
+    text-align: center;
+  }
+}
+
+
+
+
+
+
+
+// Page header
+#front-hero {
+  .marketing {
+    @include grid-row();
+    max-width: 55rem;
+  }
+
+  @include breakpoint(small) {
+    background: url('../images/demo/hero-bg-foundation-6-small.svg') bottom center;
+    background-size: cover;
+    background-position: bottom;
+    padding: rem-calc(65%) 0;
+    margin: 0 0 rem-calc(32);
+    height: auto;
+    position: relative;
+    text-align: left;
+  }
+
+  @include breakpoint(medium) {
+    background: url('../images/demo/hero-bg-foundation-6-large.svg') bottom center;
+    background-size: cover;
+    background-position: center;
+    height: rem-calc(685);
+    margin: 0 0 rem-calc(72);
+  }
+
+  #watch {
+    @include breakpoint(small) {
+      @include grid-column(7);
+      @include grid-column-position(-5);
+    }
+
+    @include breakpoint(medium) {
+      @include grid-column(12);
+      @include grid-column-position(0);
+    }
+
+    section {
+      display: inline;
+    }
+
+    a {
+      color: #B4C9D1;
+      cursor: pointer;
+      font-weight: 400;
+      margin-right: rem-calc(20);
+    }
+
+    a:hover {
+      color: #fff;
+    }
+
+    #stargazers {
+      :before {
+        content: "\f09b";
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        color: #B4C9D1;
+        margin-right: rem-calc(8);
+      }
+    }
+
+    #twitter {
+      :before {
+        content: "\f099";
+        font-family: FontAwesome;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: inherit;
+        color: #B4C9D1;
+        margin-right: rem-calc(8);
+      }
+    }
+
+  }
+
+  .tagline {
+    @include breakpoint(small) {
+      @include grid-column(8);
+    }
+
+    @include breakpoint(medium) {
+      @include grid-column(5);
+      padding-top: 6rem;
+    }
+  }
+
+  h1 {
+    color: #fff;
+    font-weight: 500;
+
+    @include breakpoint(small) {
+      font-size: 2.2rem;
+    }
+
+    @include breakpoint(medium) {
+      font-size: 2.875rem;
+    }
+  }
+
+  h4 {
+    color: #fefefe;
+    font-weight: 300;
+    font-size: 1.3125rem;
+  }
+
+  .download {
+    margin-top: rem-calc(20);
+  }
+}
+
+// Intro
+.intro {
+  @include grid-row();
+
+  .fp-intro {
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+
+    @include breakpoint(medium) {
+      @include grid-column(10);
+      @include grid-column-offset(1);
+
+      h2 {
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+      }
+
+      h4 {
+        font-size: 1.125rem;
+        line-height: 1.6;
+        color: #777;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+// Section divider
+.section-divider {
+  @include grid-row();
+
+  hr {
+    @include grid-column(12);
+    @extend .dotted;
+    box-sizing: border-box;
+  }
+}
+
+
+// Benefits
+.benefits {
+  @include grid-row();
+  text-align: center;
+
+  header {
+    @include grid-column(12);
+
+    h2 {
+      font-weight: 300;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: #777;
+    }
+  }
+
+  .semantic,
+  .responsive,
+  .customizable,
+  .professional {
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+
+    @include breakpoint(medium) {
+      @include grid-column(3);
+    }
+
+    img {
+      padding: 1.25rem;
+      margin: 1rem auto 0 auto;
+    }
+
+    h3 {
+      color: #0a0a0a;
+      font-weight: 300;
+      font-size: 1.75rem;
+    }
+
+    p {
+      font-size: 0.9375rem;
+    }
+  }
+
+  .why-foundation {
+    @include grid-row();
+    @include grid-column(12);
+    margin-top: 4rem;
+  }
+}

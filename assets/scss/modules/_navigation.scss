@@ -1,0 +1,175 @@
+.site-header{
+  border-bottom: 1px solid $light-gray;
+  height: 90px;
+  background: none;
+}
+.top-bar, .top-bar ul{
+  background: none;
+}
+
+.logo {
+  display: block;
+  text-indent: -9999px;
+  width: 159px;
+  height: 20px;
+  background: url(../../assets/images/logo@1x.svg);
+  background-size: 159px 20px;
+  margin-top: 35px;
+}
+
+.menu-icons{
+  margin-left: 12px;
+      display: inline-block;
+    li{
+      list-style: none;
+      display: inline-block;
+    }    
+    li a{
+
+      display: block;
+      font-size: 24px;
+      height: 60px;
+      width:54px;
+      line-height: 60px;
+      margin-top: 15px;
+      text-align: center;
+      color: #000000;
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+      vertical-align: top;
+      &:hover{
+        opacity: 1;
+      }
+    }
+
+}
+
+.top-bar-left,.top-bar-right{
+@include breakpoint(medium) {
+        @include grid-column(6);
+      }
+}
+
+// Navigation breakpoints
+.desktop-menu, .top-bar-left {
+  @include show-for(medium);
+}
+
+#mobile-menu, .title-bar {
+  @include hide-for(medium);
+}
+
+// Mobile menu
+.off-canvas {
+  > ul.menu {
+    height: 100vh;
+    padding: 1rem;
+  }
+}
+
+.title-bar-title {
+  a {
+    font-size: 1rem;
+    color: #B9B9B9;
+  }
+}
+
+// Tablet and desktop menu
+.top-bar {
+
+  .menu .home a {
+    
+    color: #B9B9B9;
+  }
+
+  .menu a {
+    height: 60px;
+    font-size: rem-calc(24);
+    line-height: 60px;
+    color: $primary-color;
+    color: #000000;
+    padding-bottom: 0;
+    padding:0;
+    padding-left: 12px;
+    padding-right: 12px;
+    display: inline-block;
+    margin-top: 15px;
+    // opacity: .6;
+    transition: opacity 0.2s ease-in-out;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .dropdown.menu{
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .dropdown.menu .submenu {
+    background-color: #121212;
+    color: #e6e6e6;
+    border: 0;
+  }
+
+  .dropdown.menu .has-submenu.is-down-arrow a {
+    padding-right: 1rem;
+  }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after {
+    border: 0;
+  }
+
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after {
+    display: none;
+  }
+}
+
+// Basic styles for post navigation. Nicolas Gallagher's "Micro clearfix"
+// https://css-tricks.com/snippets/css/clear-fix/
+.post-navigation:before,
+.post-navigation:after {
+  content: "";
+  display: table;
+}
+
+.post-navigation:after {
+  clear:both;
+}
+
+// Text meant only for screen readers. Addresses part of theme-check issue #840.
+// https://github.com/Automattic/_s/blob/master/style.css
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; // Above WP toolbar.
+}
+
+.nav-previous {
+  float:left;
+}
+
+.nav-next {
+  float:right;
+}
