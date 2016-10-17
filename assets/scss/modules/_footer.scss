@@ -2,17 +2,32 @@
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  border-top: 1px solid #ccc;
-  margin-top: rem-calc(60);
-
+  padding-top: rem-calc(60);
+  padding-bottom: rem-calc(72);
+  background: $primary-color;
+  
   #footer {
-    @include grid-row();
-    padding: rem-calc(30) 0;
 
     ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
+      li{
+        display: block;
+      }
+    }
+    h4,a{
+      color:white;
+    }
+    a{
+      opacity: .5;
+      line-height: 30px;
+      padding: 0;
+      transition: opacity 0.2s ease-in-out;
+      display: block;
+      &:hover{
+        opacity: .9;
+      }
     }
   }
 }

@@ -36,7 +36,7 @@ get_header(); ?>
 			?>
 			</div>
 
-			<!-- <div class="category "><span class="icon-category"></span></div> -->
+			<!-- <div class="categories "><span class="icon-category"></span></div> -->
 			<h5>
 
 				<?php foreach((get_the_category()) as $category) { 

@@ -50,6 +50,9 @@ require_once( 'library/responsive-images.php' );
 /** Configure shortcode for references */
 require_once( 'library/reference-shortcode.php' );
 
+/** Configure shortcode for references */
+require_once( 'library/taxonomy-format.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
@@ -59,3 +62,4 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 add_filter( 'mc4wp_use_sslverify', '__return_false' );
+
