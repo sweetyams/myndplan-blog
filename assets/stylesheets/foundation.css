@@ -7881,4 +7881,76 @@ blockquote {
     line-height: 1.4  em;
     color: #232323; }
 
+.category-header, .taxonomy-header {
+  width: 100%;
+  float: left;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  margin-top: 60px; }
+  @media screen and (min-width: 40em) {
+    .category-header, .taxonomy-header {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+  .category-header:last-child:not(:first-child), .taxonomy-header:last-child:not(:first-child) {
+    float: right; }
+
+.category-post, .taxonomy-post {
+  margin-bottom: 60px;
+  display: block; }
+  .category-post .post, .taxonomy-post .post {
+    width: 100%;
+    float: left;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    margin-bottom: 30px; }
+    @media screen and (min-width: 40em) {
+      .category-post .post, .taxonomy-post .post {
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem; } }
+    .category-post .post:last-child:not(:first-child), .taxonomy-post .post:last-child:not(:first-child) {
+      float: right; }
+    .category-post .post:last-child:last-child, .taxonomy-post .post:last-child:last-child {
+      float: left; }
+    @media screen and (min-width: 40em) {
+      .category-post .post, .taxonomy-post .post {
+        width: 50%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+        margin-bottom: 30px; } }
+  @media screen and (min-width: 40em) and (min-width: 40em) {
+    .category-post .post, .taxonomy-post .post {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+    @media screen and (min-width: 40em) {
+        .category-post .post:last-child:not(:first-child), .taxonomy-post .post:last-child:not(:first-child) {
+          float: right; }
+        .category-post .post:last-child:last-child, .taxonomy-post .post:last-child:last-child {
+          float: left; } }
+    @media screen and (min-width: 64em) {
+      .category-post .post, .taxonomy-post .post {
+        width: 33.33333%;
+        float: left;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem; } }
+  @media screen and (min-width: 64em) and (min-width: 40em) {
+    .category-post .post, .taxonomy-post .post {
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem; } }
+    @media screen and (min-width: 64em) {
+        .category-post .post:last-child:not(:first-child), .taxonomy-post .post:last-child:not(:first-child) {
+          float: right; }
+        .category-post .post:last-child:last-child, .taxonomy-post .post:last-child:last-child {
+          float: left; } }
+    .category-post .post .info, .taxonomy-post .post .info {
+      padding-top: 30px; }
+    .category-post .post .image, .taxonomy-post .post .image {
+      height: 120px; }
+      @media screen and (min-width: 40em) {
+        .category-post .post .image, .taxonomy-post .post .image {
+          height: 240px; } }
+      @media screen and (min-width: 64em) {
+        .category-post .post .image, .taxonomy-post .post .image {
+          height: 220px; } }
+
 /*# sourceMappingURL=foundation.css.map */

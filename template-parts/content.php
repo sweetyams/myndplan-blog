@@ -10,16 +10,27 @@
 
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
-	<header>
-		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-		<?php foundationpress_entry_meta(); ?>
-	</header>
-	<div class="entry-content">
-		<?php the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
-	</div>
-	<footer>
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
-	</footer>
-	<hr />
-</div>
+<div class="post">
+				<?php if ( has_post_thumbnail() ) : ?>
+					<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+					<div class="image zoom" ><?php the_post_thumbnail(); ?></div>
+				</a>
+				<?php endif; ?>
+				
+				<div class="info">
+					<div class="title">
+						<h5>
+						<?php foreach((get_the_category()) as $category) { 
+						    echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
+						} ?>
+						</h5>
+						<h2><a href="<?php the_permalink(); ?>" title="<?php the_title();?>"> <?php the_title(); ?></a></h2>
+					</div>
+					
+					<div class="exerpt">
+						<h4>
+							<?php echo wp_trim_words( get_the_content(), 25, '...' ); ?>
+						</h4>
+					</div>
+				</div>
+			</div>

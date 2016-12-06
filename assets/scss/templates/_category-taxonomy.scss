@@ -1,0 +1,45 @@
+.category-header,.taxonomy-header{
+  @include breakpoint(small) {
+      @include grid-column(12);
+    }
+    margin-top: 60px;
+}
+
+.category-post,.taxonomy-post{
+  margin-bottom: 60px;
+  display: block;
+
+ .post{
+     @include breakpoint(small) {
+      @include grid-column(12);
+      @include grid-column-end;
+      margin-bottom: 30px;
+
+    }
+    @include breakpoint(medium) {
+      @include grid-column(6);
+      @include grid-column-end;
+      margin-bottom: 30px;
+    }
+    @include breakpoint(large) {
+      @include grid-column(4);
+      @include grid-column-end;
+    }
+    .info{
+      padding-top: 30px;
+    }
+
+    .image{
+      @include breakpoint(small) {
+        height: 120px;
+       }
+       @include breakpoint(medium){
+         height: 240px;
+       }
+       @include breakpoint(large){
+         height: 220px;
+       }
+    }
+   
+  }
+}

@@ -17,8 +17,15 @@
 
 get_header(); ?>
 
-<div id="page" role="main">
-	<article class="main-content">
+<div class="row">
+	<div class="category-header">
+	<h5>Category</h5>
+		<h1><?php echo single_cat_title(); ?></h1>
+	</div>
+</div>
+<div class="row">
+	<div class="category-post">
+
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
@@ -39,8 +46,7 @@ get_header(); ?>
 			</nav>
 		<?php } ?>
 
-	</article>
-	<?php get_sidebar(); ?>
+	</div>
 
 </div>
 

@@ -15,6 +15,7 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<?php wp_head(); ?>
+		<link rel="shortcut icon" href="<?php bloginfo('template_directory'); ?>/assets/images/icons/favicon.ico" />
 		<script src="https://use.typekit.net/ojv4gvu.js"></script>
 		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 		<link rel="stylesheet" href="https://s3.amazonaws.com/icomoon.io/25495/Myndplan/style.css?8j8dwl">
