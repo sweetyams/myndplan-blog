@@ -71,7 +71,7 @@ get_header(); ?>
 
 				<div id="reference-<?php the_sub_field('number'); ?>" class="reference">
 					<a class="number" href="#returntoread-<?php the_sub_field('number'); ?>"><?php the_sub_field('number'); ?></a>
-					<p><?php the_sub_field('author'); ?> (<?php the_sub_field('year'); ?>). <span><?php the_sub_field('title'); ?></span><?php the_sub_field('title'); ?> <?php the_sub_field('publication'); ?> <?php if ( get_sub_field('link') ): ?><a href="<?php the_sub_field('link'); ?>">[link]</a><?php endif; ?></p>
+					<p><?php the_sub_field('author'); ?> (<?php the_sub_field('year'); ?>). <span><?php the_sub_field('title'); ?></span><?php the_sub_field('publication'); ?> <?php if ( get_sub_field('link') ): ?><a href="<?php the_sub_field('link'); ?>">[link]</a><?php endif; ?></p>
 					</div>
 					
 				<?php 
