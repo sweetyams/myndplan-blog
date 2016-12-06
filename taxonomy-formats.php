@@ -24,7 +24,7 @@ get_header(); ?>
 	</div>
 </div>
 <div class="row">
-	<div class="home-posts taxonomy-post">
+	<div class=" taxonomy-post">
 	<?php if ( have_posts() ) : ?>
 
 		<?php /* Start the Loop */ ?>
