@@ -4,7 +4,7 @@ Template Name: Front
 */
 get_header(); ?>
 
-<header id="featured" class="row" role="banner">
+<header id="featured" class="row " role="banner">
 	<div class="featured">
 		<?php $args = array( 'numberposts' => 1, 'post_status'=>"publish",'post_type'=>"post",'orderby'=>"post_date");
 		$postslist = get_posts( $args );

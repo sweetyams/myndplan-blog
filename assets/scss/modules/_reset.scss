@@ -2,8 +2,7 @@
 
 @include breakpoint(medium) {
 .row{
-	margin-left: rem-calc(36);
-    margin-right: rem-calc(36);
+	margin:0 auto;
 }
 }
 

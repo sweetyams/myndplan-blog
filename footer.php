@@ -13,7 +13,7 @@
 		</section>
 		<div id="footer-container">
 			<footer id="footer">
-				<div class="row">
+				<div class="row ">
 				<?php do_action( 'foundationpress_before_footer' ); ?>
 				<?php dynamic_sidebar( 'footer-widgets' ); ?>
 				<?php do_action( 'foundationpress_after_footer' ); ?>
