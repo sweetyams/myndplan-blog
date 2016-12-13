@@ -7823,8 +7823,10 @@ body#tinymce {
       display: none !important; } }
   #single-post .entry-content .image {
     margin-bottom: 24px; }
-  #single-post .entry-content h5 {
-    padding-bottom: 24px; }
+  #single-post .entry-content .catformats {
+    margin-bottom: 30px; }
+    #single-post .entry-content .catformats span {
+      opacity: .5; }
   #single-post .entry-content h1 {
     padding-bottom: 2.625rem; }
 
@@ -7865,7 +7867,7 @@ body#tinymce {
   margin-top: 2.625rem; }
 
 blockquote {
-  font-size: 2em;
+  font-size: 1.2em;
   position: relative;
   padding: 0;
   font-family: "freight-text-pro", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;

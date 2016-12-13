@@ -35,14 +35,28 @@ get_header(); ?>
 				endif;
 			?>
 			</div>
-
+			<div class="catformats">
 			<!-- <div class="categories "><span class="icon-category"></span></div> -->
-			<h5>
-
-				<?php foreach((get_the_category()) as $category) { 
-				    echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
-				} ?>
+			<h5><span>Categories: </span>
+				<?php
+				$cat = array();
+				foreach((get_the_category()) as $category) { 
+				    array_push($cat, '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>');
+				}
+				echo implode(', ', $cat);
+				?>
 			</h5>
+			<h5><span>Formats: </span>
+			<?php 
+			$formats = array();
+			$term_list = wp_get_post_terms($post->ID, 'formats', array("fields" => "all"));
+			foreach($term_list as $format) { 
+					array_push($formats, '<a href="http://blog.myndplan.dev/format/' . $format->slug . '">' . $format->name . '</a>');
+				}
+				echo implode(', ', $formats);
+				?>
+				</h5>
+				</div>
 			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
 

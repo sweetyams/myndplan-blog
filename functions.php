@@ -63,3 +63,39 @@ if( function_exists('acf_add_options_page') ) {
 }
 add_filter( 'mc4wp_use_sslverify', '__return_false' );
 
+
+/**
+ * Get taxonomies terms links.
+ *
+ * @see get_object_taxonomies()
+ */
+function wpdocs_custom_taxonomies_terms_links() {
+    // Get post by post ID.
+    $post = get_post( $post->ID );
+ 
+    // Get post type by post.
+    $post_type = $post->post_type;
+ 
+    // Get post type taxonomies.
+    $taxonomies = get_object_taxonomies( $post_type, 'objects' );
+ 
+    $out = array();
+ 
+    foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+ 
+        // Get the terms related to post.
+        $terms = get_the_terms( $post->ID, $taxonomy_slug );
+ 
+        if ( ! empty( $terms ) ) {
+            $out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
+            foreach ( $terms as $term ) {
+                $out[] = sprintf( '<li><a href="%1$s">%2$s</a></li>',
+                    esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+                    esc_html( $term->name )
+                );
+            }
+            $out[] = "\n</ul>\n";
+        }
+    }
+    return implode( '', $out );
+}

@@ -19,9 +19,13 @@ get_header(); ?>
 			<div class="row info">
 				<div class="title">
 					<h5>
-					<?php foreach((get_the_category()) as $category) { 
-					    echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>';
-					} ?>
+						<?php
+						$cat = array();
+						foreach((get_the_category()) as $category) { 
+						    array_push($cat, '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->name ) . '</a>');
+						}
+						echo implode(', ', $cat);
+						?>
 					</h5>
 					<h2><a href="<?php the_permalink(); ?>" title="<?php the_title();?>"> <?php the_title(); ?></a></h2>
 				</div>
