@@ -7640,6 +7640,9 @@ body#tinymce {
     .benefits .why-foundation:last-child:not(:first-child) {
       float: right; }
 
+[type='submit'] {
+  margin-top: 36px; }
+
 #page {
   max-width: 90rem;
   margin-left: auto;
