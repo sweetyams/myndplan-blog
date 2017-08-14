@@ -8,33 +8,24 @@
 
 get_header(); ?>
 
-<div id="single-post" class="row page-center" role="main">
 
 <?php do_action( 'foundationpress_before_content' ); ?>
 <?php while ( have_posts() ) : the_post(); ?>
-<div class="entry-info">
 
-	<?php foundationpress_entry_meta(); ?>
-	<?php dynamic_sidebar('post-widgets'); ?>
-	
-	<div class="card discussion">
-		<h3><?php the_field('discussion_title'); ?></h3>
-		<h4><?php the_field('discussion'); ?></h4>
-	</div>
+<?php
+	if ( has_post_thumbnail() ) :
+		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ) );
+	endif;
+?>
 
-</div>
+<div class="image no-zoom" style="background-image: url(<?php echo $thumbnail[0]; ?>); background-position: center center;"></div>
+<div id="single-post" class="row page-center" role="main">
 
-<div class="entry-content">
+<div class="entry-content"> 
 
 		<header>
-			
-			<div class="image no-zoom">
-			<?php
-				if ( has_post_thumbnail() ) :
-					the_post_thumbnail();
-				endif;
-			?>
-			</div>
+			<h2 class="entry-title"><?php the_title(); ?> <span><?php the_field('secondary_title'); ?></span></h2>
+
 			<div class="catformats">
 			<!-- <div class="categories "><span class="icon-category"></span></div> -->
 			<h5><span>Categories: </span>
@@ -57,20 +48,17 @@ get_header(); ?>
 				?>
 				</h5>
 				</div>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
 		</header>
 
-		<div class="entry-mobile">
 
-			<?php foundationpress_entry_meta(); ?>
-			<?php dynamic_sidebar('post-widgets'); ?>
-			
-			<div class="card discussion">
-				<h3><?php the_field('discussion_title'); ?></h3>
-				<h4><?php the_field('discussion'); ?></h4>
-			</div>
 
-		</div>
+		<?php foundationpress_entry_meta(); ?>
+	<?php dynamic_sidebar('post-widgets'); ?>
+	
+	<div class="card discussion">
+		<h3><?php the_field('discussion_title'); ?></h3>
+		<h4><?php the_field('discussion'); ?></h4>
+	</div>
 
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		

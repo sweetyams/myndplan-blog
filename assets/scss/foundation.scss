@@ -25,8 +25,11 @@
 @include foundation-global-styles;
 
 // Individual foundation components
-@include foundation-grid;
+// @include foundation-grid;
+// @include foundation-flex-classes;
 // @include foundation-flex-grid;
+@include foundation-xy-grid-classes;
+
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
@@ -91,6 +94,7 @@
 
 // Templates
 @import "templates/front";
+@import "templates/articles";
 @import "templates/page-default";
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";

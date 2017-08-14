@@ -46,10 +46,10 @@
 // ---------
 
 $global-font-size: 100%;
-$global-width: rem-calc(1440);
+$global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #232323,
+  primary: color(base),
   secondary: #777,
   success: #3adb76,
   warning: #ffae00,
@@ -61,8 +61,8 @@ $dark-gray: #8a8a8a;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
-$body-font-color: $black;
-$body-font-family: "freight-sans-pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$body-font-color: color(base);
+$body-font-family: "aktiv-grotesk", "freight-sans-pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -72,6 +72,10 @@ $global-radius: 2px;
 $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
+
+
+
+
 
 @include add-foundation-colors;
 
@@ -102,8 +106,8 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-
-$header-font-family: "freight-text-pro", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+$header-font-family: "aktiv-grotesk", "freight-sans-pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+// $header-font-family: "aktiv-grotesk", "freight-text-pro", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -121,14 +125,12 @@ $header-sizes: (
     'h2': 30,
     'h3': 24,
     'h4': 21,
-    'h5': 14,
+    'h5': 12,
     'h6': 14,
   ),
 );
 
-
-
-$header-color: #323232;
+$header-color: color(base,dark);
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-text-rendering: optimizeLegibility;

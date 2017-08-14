@@ -1,37 +1,48 @@
 #single-post {
-  margin-top: 3rem;
+
 
   .entry-info, .entry-content{
     @include breakpoint(medium) {
-      @include grid-column(12);
+      @include grid-column(10);
     }
     
   }
   .entry-content{
+
     @include breakpoint(large) {
-      @include grid-column(8);
+      @include grid-column(7);
+      @include grid-column-position(center);
     }
      @include breakpoint(xlarge) {
       @include grid-column(6);
+      @include grid-column-position(center);
+
     }
+
     
   }
   .entry-info{
     @include breakpoint(large) {
-      @include grid-column(4);
-    }
-    @include show-for(large);
-
+      @include grid-column(12);
     }
 
-    .entry-mobile{
-      @include hide-for(large);
     }
+
+.entry-title span{
+  color: color(base, lighter);
+}
   
-  .entry-content{
-    .image{
+  .image{
       margin-bottom: 24px;
+      background-size: cover;
+      width:100%;
+      display: block;
+      border-radius: 0;
     }
+
+  .entry-content{
+    margin-top: rem-calc(64);
+    
     .catformats{
       margin-bottom: 30px;
       span{

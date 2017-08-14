@@ -1,10 +1,29 @@
 .site-header{
-  border-bottom: 1px solid $light-gray;
+
   height: 90px;
   background: none;
 }
 .top-bar, .top-bar ul{
   background: none;
+}
+
+.top-logo{
+ .icon-mp_icon{ 
+     width: 44px;
+    height: 44px;
+    font-size: 44px;
+    color: color(base);
+    display: inline-block;
+    margin-top: 23px;
+ }
+ .top-title{
+   display: inline-block;
+    height: 44px;
+    vertical-align: top;
+    margin-top: 23px;
+    line-height: 44px;
+    margin-left: 16px; 
+ }
 }
 
 .logo {
@@ -18,8 +37,10 @@
 }
 
 .menu-icons{
+
   margin-left: 12px;
       display: inline-block;
+      display:none;
     li{
       list-style: none;
       display: inline-block;
@@ -86,19 +107,27 @@
     height: 60px;
     font-size: rem-calc(24);
     line-height: 60px;
-    color: $primary-color;
-    color: #000000;
     padding-bottom: 0;
     padding:0;
     padding-left: 12px;
+    color: color(base,light);
     padding-right: 12px;
     display: inline-block;
     margin-top: 15px;
     // opacity: .6;
     transition: opacity 0.2s ease-in-out;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 500;
     &:hover {
-      opacity: 1;
+      color: color(base,dark);
     }
+  }
+
+  .menu .active > a{
+  background:none;
+  color: $primary-color;
   }
 
   .dropdown.menu{

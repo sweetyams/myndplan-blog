@@ -16,7 +16,7 @@
 /// @returns {Color} The $yes color or $no color.
 @function foreground($color, $yes: $black, $no: $white, $threshold: 60%) {
   @if $color == transparent {
-    $color: $body-background;
+    $color: $body-background; 
   }
   @if (lightness($color) > $threshold) {
     @return $yes;
@@ -56,5 +56,114 @@
   }
   @if map-has-key($foundation-palette, alert) {
     $alert-color: map-get($foundation-palette, alert) !global;
+  }
+}
+
+$color-palette: (
+  white: (
+    base: #ffffff
+  ),
+
+  black: (
+    base: #000000
+  ),
+
+  sky: (
+    lighter: #FAFBFC,
+    light: #F5F6FA,
+    base: #F0F2F7,
+    dark: #D1D6E6
+  ),
+
+  base: (
+    lighter: #808AA8,
+    light: #6D758F,
+    base: #464B5C,
+    dark: #323642
+  ),
+
+  blue: (
+    lighter: #EBF3FF,
+    light: #B3D1FF,
+    base: #5C9CFA,
+    dark: #5075AB,
+    darker: #36465E
+  ),
+
+  green: (
+    lighter: #EBFFF2,
+    light: #AEEBC5,
+    base: #77D49A,
+    dark: #50AB73,
+    darker: #365E45
+  ),
+
+  yellow: (
+    lighter: #FFF9EB,
+    light: #FFE5A8,
+    base: #FFD97A,
+    dark: #CCAC5A,
+    darker: #806F45
+  ),
+
+  orange: (
+    lighter: #FFF4EB,
+    light: #FFC694,
+    base: #FAA55A,
+    dark: #CC8343,
+    darker: #805937
+  ),
+
+  red: (
+    lighter: #fbeae5,
+    light: #fead9a,
+    base: #ed6347,
+    dark: #bf0711,
+    darker: #330101,
+    text: #583c35
+  ),
+
+  purple: (
+    lighter: #EDEBFF,
+    light: #BBB3FF,
+    base: #7E70E3,
+    dark: #5B50AB,
+    darker: #553461
+  ),
+
+  teal: (
+    lighter: #EBFFFE,
+    light: #B4F0EE,
+    base: #77D8D5,
+    dark: #58A8A6,
+    darker: #395C5B
+  ),
+
+  indigo: (
+    lighter: #FAEBFF,
+    light: #DFAAF2,
+    base: #B866D7,
+    dark: #944CAD,
+    darker: #3F2747
+  )
+);
+
+
+/// Returns the color value for a given color name and group.
+///
+/// @param {String} $hue - The color's hue.
+/// @param {String} $value - The darkness/lightness of the color. Defaults to base.
+/// appear. Applies a multiply filter to ensure appropriate contrast.
+/// @return {Color} The color value.
+
+@function color($hue, $value: base) {
+  $fetched-color: map-get(map-get($color-palette, $hue), $value);
+
+  @if map-has-key($color-palette, $fetched-color) {
+    $fetched-color: map-get(map-get($color-palette, $fetched-color), $value);
+  }
+
+  @if type-of($fetched-color) == color {
+    @return $fetched-color;
   }
 }
