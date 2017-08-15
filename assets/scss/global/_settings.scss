@@ -68,7 +68,7 @@ $global-margin: 1rem;
 $global-padding: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 2px;
+$global-radius: 3px;
 $global-text-direction: ltr;
 $global-flexbox: false;
 $print-transparent-backgrounds: true;
@@ -121,10 +121,18 @@ $header-sizes: (
     'h6': 12,
   ),
   medium: (
-    'h1': 36,
-    'h2': 30,
-    'h3': 24,
-    'h4': 21,
+    'h1': 28,
+    'h2': 24,
+    'h3': 22,
+    'h4': 17,
+    'h5': 12,
+    'h6': 12,
+  ),
+  large: (
+    'h1': 32,
+    'h2': 24,
+    'h3': 22,
+    'h4': 19,
     'h5': 12,
     'h6': 14,
   ),
@@ -132,12 +140,12 @@ $header-sizes: (
 
 $header-color: color(base,dark);
 $header-lineheight: 1.4;
-$header-margin-bottom: 0.5rem;
+$header-margin-bottom: .75rem;
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
-$paragraph-margin-bottom: 1rem;
+$paragraph-margin-bottom: 2.2rem;
 $paragraph-text-rendering: optimizeLegibility;
 $code-color: $black;
 $code-font-family: $font-family-monospace;
@@ -242,16 +250,16 @@ $breadcrumbs-item-slash: true;
 $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
-$button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background: color(blue);
+$button-background-hover: color(blue,dark);
 $button-color: #fff;
 $button-color-alt: #000;
 $button-radius: $global-radius;
 $button-sizes: (
   tiny: 0.6rem,
   small: 0.75rem,
-  default: 0.9rem,
-  large: 1.25rem,
+  default: 1rem,
+  large: 1.5rem,
 );
 $button-opacity-disabled: 0.25;
 
@@ -350,12 +358,12 @@ $select-radius: $global-radius;
 $input-color: $black;
 $input-placeholder-color: $medium-gray;
 $input-font-family: inherit;
-$input-font-size: rem-calc(21);
+$input-font-size: rem-calc(16);
 $input-background: $white;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
-$input-border: none;
-$input-border-focus: none;
+$input-border: 1px solid color(sky,dark);
+$input-border-focus: 1px solid color(blue);
 $input-shadow: none;
 $input-shadow-focus: none;
 $input-cursor-disabled: default;

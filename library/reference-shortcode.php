@@ -7,7 +7,7 @@
 
 function recent_posts_function($atts) {	
 	$num = $atts['num'];
-	return "<a id='returntoread-" . $num . "' class='reference' href='#reference-" . $num . "'>(" . $num . ")</a>";
+	return "<a id='returntoread-" . $num . "' class='reference-item' href='#reference-" . $num . "'>" . $num . "</a>";
 }
 
 function register_shortcodes(){

@@ -56,7 +56,7 @@ endif;
 	if ( post_password_required() ) { ?>
 	<section id="comments">
 		<div class="notice">
-			<p class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'foundationpress' ); ?></p>
+			<div class="bottom"><?php _e( 'This post is password protected. Enter the password to view comments.', 'foundationpress' ); ?></div>
 		</div>
 	</section>
 	<?php
@@ -69,50 +69,43 @@ if ( comments_open() ) :
 	if ( (is_page() || is_single()) && ( ! is_home() && ! is_front_page()) ) :
 ?>
 <section id="respond">
-	<h2><?php comment_form_title( __( 'Leave a Reply', 'foundationpress' ), __( 'Leave a Reply to %s', 'foundationpress' ) ); ?></h2>
-	<p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
+	<h2><?php comment_form_title( __( 'Comment', 'foundationpress' ), __( 'Leave a Reply to %s', 'foundationpress' ) ); ?></h2>
+	<div class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></div>
 	<?php if ( get_option( 'comment_registration' ) && ! is_user_logged_in() ) : ?>
-	<p><?php printf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'foundationpress' ), wp_login_url( get_permalink() ) ); ?></p>
+	<div><?php printf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'foundationpress' ), wp_login_url( get_permalink() ) ); ?></div>
 	<?php else : ?>
 	<form action="<?php echo get_option( 'siteurl' ); ?>/wp-comments-post.php" method="post" id="commentform">
 		<?php if ( is_user_logged_in() ) : ?>
-		<p><?php printf( __( 'Logged in as <a href="%s/wp-admin/profile.php">%1$s</a>.', 'foundationpress' ), get_option( 'siteurl' ), $user_identity ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a></p>
+		<div><?php printf( __( 'Logged in as <a href="%s/wp-admin/profile.php">%1$s</a>.', 'foundationpress' ), get_option( 'siteurl' ), $user_identity ); ?> <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php __( 'Log out of this account', 'foundationpress' ); ?>"><?php _e( 'Log out &raquo;', 'foundationpress' ); ?></a></div>
 		<?php else : ?>
-		<p>
+		<div class="input">
+
+			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
 			<label for="author">
 				<?php
-					_e( 'Name', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); }
+					_e( 'Name', 'foundationpress' ); 
 				?>
-			</label>
-			<input type="text" class="five" name="author" id="author" value="<?php echo esc_attr( $comment_author ); ?>" size="22" tabindex="1" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
-		</p>
-		<p>
+			</label>		</div>
+		<div class="input">
+
+			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
 			<label for="email">
 				<?php
-					_e( 'Email (will not be published)', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); }
+					_e( 'Email', 'foundationpress' ); if ( $req ) { _e( ' (required)', 'foundationpress' ); }
 				?>
-			</label>
-			<input type="text" class="five" name="email" id="email" value="<?php echo esc_attr( $comment_author_email ); ?>" size="22" tabindex="2" <?php if ( $req ) { echo "aria-required='true'"; } ?>>
-		</p>
-		<p>
-			<label for="url">
-				<?php
-					_e( 'Website', 'foundationpress' );
-				?>
-			</label>
-			<input type="text" class="five" name="url" id="url" value="<?php echo esc_attr( $comment_author_url ); ?>" size="22" tabindex="3">
-		</p>
+			</label>		</div>
+		
 		<?php endif; ?>
-		<p>
+		<div class="input">
+
+			<textarea name="comment" id="comment" tabindex="4" rows="4"></textarea>
 			<label for="comment">
 					<?php
 						_e( 'Comment', 'foundationpress' );
 					?>
-			</label>
-			<textarea name="comment" id="comment" tabindex="4" rows="4"></textarea>
-		</p>
+			</label>		</div>
 		
-		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit Comment', 'foundationpress' ); ?>"></p>
+		<div><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e( 'Submit', 'foundationpress' ); ?>"></div>
 		<?php comment_id_fields(); ?>
 		<?php do_action( 'comment_form', $post->ID ); ?>
 	</form>

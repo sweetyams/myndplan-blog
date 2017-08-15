@@ -6,26 +6,26 @@
     margin-bottom: 30px;
 }
 
-.category-post,.taxonomy-post{
+.category-post,.taxonomy-post, .related-posts{
   margin-bottom: 60px;
   display: block;
+  display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 
  .post{
-     @include breakpoint(small) {
-      @include grid-column(12);
-      @include grid-column-end;
-      margin-bottom: 30px;
-
-    }
+ @include grid-column(12);
+      margin-top: rem-calc(40px);
     @include breakpoint(medium) {
       @include grid-column(6);
-      @include grid-column-end;
-      margin-bottom: 30px;
     }
     @include breakpoint(large) {
-      @include grid-column(4);
-      @include grid-column-end;
+      margin-top: rem-calc(60px);
+
     }
+
     .info{
       padding-top: 30px;
     }
@@ -34,13 +34,36 @@
       @include breakpoint(small) {
         height: 120px;
        }
-       @include breakpoint(medium){
+       @include breakpoint(medium) {
          height: 240px;
        }
-       @include breakpoint(large){
+       @include breakpoint(large) {
          height: 220px;
        }
     }
    
   }
+}
+
+.related-posts .post .image{
+      @include breakpoint(small) {
+        height: 100px;
+       }
+       @include breakpoint(medium) {
+         height: 140px;
+       }
+       @include breakpoint(large) {
+         height: 140px;
+       }
+    }
+.related-posts .post{
+  margin-top: 10px;
+}
+
+.related-posts{
+  width:100%;
+  padding-top: rem-calc(60);
+  padding-bottom: rem-calc(60);
+  margin-bottom: 0;
+  background: color(sky,light);
 }

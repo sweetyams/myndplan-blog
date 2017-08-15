@@ -1,44 +1,36 @@
 
 .page-header{
   @include grid-column(12);
-  margin-top: rem-calc(60px);
+  margin-top: rem-calc(40px);
 }
 
 .article-posts{
-  margin-top: 52px;
+  display: flex;
+  flex-wrap: wrap;
   .post{
-     @include breakpoint(small) {
-      margin-bottom: 30px;
-
-    }
+      @include grid-column(12);
+      margin-top: rem-calc(40px);
     @include breakpoint(medium) {
-      &:first-child{
-        @include grid-column(12);
-        
-      }
       @include grid-column(6);
-      margin-bottom: 30px;
     }
     @include breakpoint(large) {
-      &:first-child{
-        @include grid-column(6);
-      }
-      @include grid-column(6);
+      margin-top: rem-calc(60px);
+
     }
 
     .info{
-      padding-top: 30px;
+      
     }
 
     .image{
       @include breakpoint(small) {
-        height: 120px;
+        height: 160px;
        }
        @include breakpoint(medium){
-         height: 240px;
+         height: 180px;
        }
        @include breakpoint(large){
-         height: 220px;
+         height: 320px;
        }
     }
    

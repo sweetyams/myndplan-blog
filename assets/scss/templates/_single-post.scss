@@ -1,39 +1,74 @@
-#single-post {
+.entry-title span{
+  color: color(base, lighter);
+  font-weight: 300;
+}
 
-
-  .entry-info, .entry-content{
+.meta{
+  @include grid-row();
+  position: absolute;
+    width: 100%;
+    z-index: 100;
+    bottom: 0;
+    font-size: 0;
+  .info{
+   @include grid-column(11);
+   @include grid-column-position(center);
+  
     @include breakpoint(medium) {
-      @include grid-column(10);
+      @include grid-column(9);
+      @include grid-column-position(center);
     }
-    
-  }
-  .entry-content{
 
     @include breakpoint(large) {
       @include grid-column(7);
       @include grid-column-position(center);
     }
-     @include breakpoint(xlarge) {
+
+    @include breakpoint(xlarge) {
       @include grid-column(6);
       @include grid-column-position(center);
-
+    }
     }
 
-    
+  h4{
+    color: white;
+    font-size: 12px;
+    display: inline-block;
+    padding: 4px 8px;
+    background: color(base,dark);
+    margin-bottom: 0px;
+    padding-left: 12px;
+    &:last-child{
+      padding-left: 8px;
+      padding-right: 12px;
+    }
   }
-  .entry-info{
-    @include breakpoint(large) {
-      @include grid-column(12);
-    }
-
-    }
-
-.entry-title span{
-  color: color(base, lighter);
 }
+
+
+  .entry-content{
+   @include grid-column(11);
+   @include grid-column-position(center);
+  
+    @include breakpoint(medium) {
+      @include grid-column(9);
+      @include grid-column-position(center);
+    }
+
+    @include breakpoint(large) {
+      @include grid-column(7);
+      @include grid-column-position(center);
+    }
+
+    @include breakpoint(xlarge) {
+      @include grid-column(6);
+      @include grid-column-position(center);
+    }
+  }
+
+
   
   .image{
-      margin-bottom: 24px;
       background-size: cover;
       width:100%;
       display: block;
@@ -41,7 +76,8 @@
     }
 
   .entry-content{
-    margin-top: rem-calc(64);
+    padding-top: rem-calc(64);
+    padding-bottom: rem-calc(40);
     
     .catformats{
       margin-bottom: 30px;
@@ -52,8 +88,52 @@
     h1{
       padding-bottom: rem-calc(42);
     } 
-  }
+
+    ol {
+    margin-left: 0;
+    padding-right: 0;
+    list-style-type: none;
 }
+ol li {
+    counter-increment: step-counter;
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+}
+
+ol li::before {
+    content: counter(step-counter);
+    font-size: 1.4rem;
+    color: color(base, lighter);
+    font-weight: bold;
+    border-radius: 3px;
+    position: absolute;
+    left: -24px;
+    top: -2px;
+    @include lora;
+}
+
+ul li{
+
+  position: relative;
+  margin-bottom: 1rem;
+  font-size: 1.1em;
+}
+ul li::before {
+    content: " ";
+    background: color(sky,dark);
+    height:6px;
+    width:6px;
+    border-radius: 6px;
+    position: absolute;
+    left: -20px;
+    top: 11px;
+
+}
+
+
+}
+
 
 .categories{
   font-size: rem-calc(16);
@@ -70,33 +150,24 @@
   padding:30px;
   padding-top: 24px;
   margin-bottom: 30px;
+  /* Rectangle 13: */
+  background: color(sky,lighter);
+  border: 1px solid color(sky);
+  border-radius: 3px;
+
 
   h2{
-    padding-bottom: 18px;
   }
-  h3{
-    padding-bottom: 12px;
+  h4{
+    margin-bottom: 0px;
   }
 }
 
-.references{
-  margin-top: rem-calc(42);
-}
 
-.reference {
-  position: relative;
-  .number{
-    position: absolute;
-    top:0;
-    left:-40px;
-    line-height: rem-calc(36);
-  }
-}
 
 #respond{
-  background: $light-gray;
+  // background: $light-gray;
   border-radius: 2px;
-  padding:30px;
   margin-top: rem-calc(42);
 }
 
@@ -121,4 +192,57 @@ blockquote{
     line-height: 1.4  em;
     color:$primary-color;
   }
+}
+
+.comment-section{
+  .entry-content{
+  padding-top: 0;
+}
+}
+
+.reference-section{
+.entry-content{
+  padding-top: 0;
+}
+.references{
+  margin-top: rem-calc(42);
+}
+
+.reference {
+  position: relative;
+  .number{
+    position: absolute;
+    top:0;
+    left:-50px;
+    line-height: rem-calc(36);
+    span{
+      margin-right: 8px;
+    }
+    &:hover{
+      color:color(blue)
+    }
+
+  }
+}
+
+.reference-item{
+  background: color(sky);
+  color:color(base);
+  font-weight: 500;
+  font-size: .7rem;
+  height: 18px;
+  width:18px;
+  display: inline-block;
+  border-radius: 9px;
+  text-align: center;
+  line-height: 18px;
+  vertical-align: top;
+  top: 4px;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  &:hover{
+    background: color(blue);
+    color: white;
+  }
+}
 }

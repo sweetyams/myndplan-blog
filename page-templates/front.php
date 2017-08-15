@@ -166,14 +166,6 @@ if( $posts ): ?>
 	</div>
 </div>
 
-<div class="subscribe-section">
-	<div class="row">
-		<div class="subscribe-content">
-			<h2>Subscribe and get access to more amazing articles</h2>
-			<?php echo do_shortcode("[mc4wp_form id='5']"); ?>
-		</div>
-	</div>
- </div>
-
+ <?php get_template_part( 'template-parts/subscribe-section', 'none' ); ?>
 
 <?php get_footer();

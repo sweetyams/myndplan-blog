@@ -2,32 +2,56 @@
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding-top: rem-calc(60);
-  padding-bottom: rem-calc(72);
-  background: $primary-color;
+  background: white;
   
   #footer {
-
-    ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-      li{
-        display: block;
-      }
-    }
-    h4,a{
-      color:white;
-    }
-    a{
-      opacity: .5;
-      line-height: 30px;
-      padding: 0;
-      transition: opacity 0.2s ease-in-out;
-      display: block;
-      &:hover{
-        opacity: .9;
-      }
-    }
+    height: 120px;
   }
+  .widget_text p{
+    line-height: 60px;
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+}
+
+.pagination{
+  margin-top: rem-calc(120);
+}
+
+.menu-icons{
+  margin-left: 12px;
+  display: inline-block;
+  margin-top: 30px;
+  float: right;
+      // display:none;
+    li{
+      list-style: none;
+      display: inline-block;
+    }    
+    li a{
+
+      display: block;
+      
+      height: 40px;
+      width: 40px;
+      line-height: 60px;
+      font-size: 20px;
+      @include breakpoint(medium) {
+        height: 60px;
+        width:54px;
+        font-size: 24px;
+       }
+
+      
+      margin-top: 0;
+      text-align: center;
+      color: #000000;
+      opacity: 1;
+      transition: opacity 0.2s ease-in-out;
+      vertical-align: top;
+      &:hover{
+        opacity: 1;
+      }
+    }
+
 }

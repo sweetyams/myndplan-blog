@@ -79,9 +79,12 @@
 @import "modules/typography";
 @import "modules/reset";
 
+@import "global/custom";
+
 // Modules
 @import "modules/navigation";
 @import "modules/footer";
+@import "modules/subscribe";
 @import "modules/sidebar";
 @import "modules/editor-style";
 
@@ -90,6 +93,9 @@
 @import "components/featured-image";
 @import "components/dividers";
 @import "components/links";
+@import "components/overlay";
+@import "components/toc";
+
 
 // Templates
 @import "templates/front";

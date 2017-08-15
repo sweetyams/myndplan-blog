@@ -1,0 +1,66 @@
+.toc{
+  position: fixed;
+  top:120px;
+  @include show-for(large);
+  z-index: 100;
+  
+  li{
+    position: relative;
+    
+    transition: all .3s ease-in-out;
+    font-size: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background: white;
+    a:hover{
+      color: color(blue);
+    }
+  }
+  .toc_widget_list > li{
+    left: -300px;
+    max-width: 240px;
+    &:first-child{
+      padding-top: 30px;
+    }
+    &:last-child{
+      padding-bottom: 30px;
+    }
+  }
+  ul{
+    margin:0;
+
+  }
+  li::after{
+    content: ' ';
+    position: absolute;
+    top:0;
+    height: 1px;
+    width:40px;
+    background: color(sky, dark);
+    transition: all .3s ease-in-out;
+  }
+
+  li::after{
+    left:292px;
+  }
+
+  li li::after{
+    width:30px;
+    left:284px;
+  }
+  li li li::after{
+    width:20px;
+    left:276px;
+  }
+
+  &:hover{
+    .toc_widget_list > li{
+    left: 0px;
+    }
+    li:after{
+      left: -200px;
+    }
+  }
+}

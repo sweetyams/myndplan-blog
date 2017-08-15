@@ -1,0 +1,76 @@
+.join-section{
+  background: color(blue);
+  padding-top: 78px;
+  padding-bottom: 78px;
+  margin-top: 96px;
+  text-align: center;
+  h1{
+    @include lora;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    line-height: 3rem;
+    opacity: .6
+  }
+  a:not(.button){
+    color: white;
+    opacity: .6;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  .button{
+    background: white;
+    color: color(blue,dark);
+    transition: all 0.2s ease-in-out;
+    &:hover{
+      background: color(blue,dark);
+      color:white;
+    }
+  }
+}
+
+.button{
+  height: 64px;
+  line-height: 34px;
+  padding: 15px 30px;
+}
+
+.subscribe-section{
+  background: color(sky,light);
+  padding-top: 78px;
+  padding-bottom: 78px;
+  margin-top: 96px;
+
+  .subscribe-content{
+    @include breakpoint(small) {
+      @include grid-column(12);
+    }
+    @include breakpoint(medium) {
+      @include grid-column(10);
+      @include grid-column-position(center);
+    }
+
+  }
+  .subscribe{
+    padding-top: 30px;
+    // @include grid-row();
+    .col{
+      
+      @include breakpoint(small) {
+        @include grid-column(12);
+        padding-left: rem-calc(7.5);
+        padding-right: rem-calc(7.5); 
+      }
+      @include breakpoint(large) {
+        @include grid-column(4);
+        padding-left: rem-calc(7.5) !important;
+        padding-right: rem-calc(7.5) !important;
+      }
+    }
+    
+  }
+  h2{
+    text-align: center;
+  }
+}

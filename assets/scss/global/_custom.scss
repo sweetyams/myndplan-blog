@@ -1,0 +1,60 @@
+[type='text'], [type='email'], textarea{
+  font-size: 16px;
+  line-height: 24px;
+  padding-top: 32px;
+  padding-left: 16px;
+  height: 64px;
+  background: white;
+  border-radius: 3px;
+}
+input[type="submit"]{
+  margin-top: 0;
+  font-size: 1rem;
+  height: 64px;
+}
+
+.input {
+  position: relative;
+  label{
+    position: absolute;
+    font-size: 16px;
+    line-height: 24px;
+    top:20px;
+    left:16px;
+    color: color(base, light);
+    transition: all 0.2s ease-in-out;
+  }
+  input:focus + label, .input-has-value, textarea:focus + label{
+    font-size: 14px;
+    top:8px;
+  }
+}
+
+.readingProgressbar, progress[value]::-webkit-progress-value {
+  border-radius: 0;
+}
+
+strong, b {
+    font-weight: 500;
+    line-height: inherit;
+    color:color(base);
+}
+
+
+.et_monarch .et_social_mobile{
+  background: color(sky);
+}
+.et_monarch .et_social_heading{
+    color: color(base);
+}
+
+.pagination .current{
+  display: inline-block;
+}
+
+.row{
+  padding: 0 12px;
+  .row{
+    padding: 0;
+  }
+}

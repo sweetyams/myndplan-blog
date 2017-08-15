@@ -6,6 +6,7 @@
 .image{
   border-radius: 2px;
   position: relative;
+  background-size: cover;
     @include breakpoint(small) {
     height: 260px;
     }
@@ -208,46 +209,6 @@ li::before {
   }
 }
 
-.subscribe-section{
-  background: $light-gray;
-  padding-top: 78px;
-  padding-bottom: 78px;
-  margin-top: 96px;
-
-  .subscribe-content{
-    @include breakpoint(small) {
-      @include grid-column(12);
-    }
-    @include breakpoint(large) {
-      @include grid-column(8);
-    }
-    @include breakpoint(xlarge) {
-      @include grid-column(6);
-      @include grid-column-position(center);
-    }
-  }
-  .subscribe{
-    padding-top: 30px;
-    @include grid-row();
-    .col{
-      
-      @include breakpoint(small) {
-        @include grid-column(12);
-        padding-left: rem-calc(7.5);
-        padding-right: rem-calc(7.5); 
-      }
-      @include breakpoint(large) {
-        @include grid-column(4);
-        padding-left: rem-calc(7.5) !important;
-        padding-right: rem-calc(7.5) !important;
-      }
-    }
-    
-  }
-  h2{
-    text-align: center;
-  }
-}
 
 
 

@@ -21,8 +21,8 @@ function foundationpress_pagination() {
 		'total' => $wp_query->max_num_pages,
 		'mid_size' => 5,
 		'prev_next' => true,
-	    'prev_text' => __( '&laquo;', 'foundationpress' ),
-	    'next_text' => __( '&raquo;', 'foundationpress' ),
+	    'prev_text' => __( '<span class="icon-arrow-left"></span>', 'foundationpress' ),
+	    'next_text' => __( '<span class="icon-arrow-right"></span>', 'foundationpress' ),
 		'type' => 'list',
 	) );
 

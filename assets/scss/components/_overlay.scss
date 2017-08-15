@@ -1,0 +1,98 @@
+.overlay {
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    position: absolute;
+    transition: left 500ms;
+    -moz-transition: left 500ms;
+    -webkit-transition: left 500ms;
+    -o-transition: left 500ms;
+    z-index: 10;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0s 0.5s;
+    &.open{
+        opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s;
+    }
+
+    & > .row{
+        display: table;
+    height: 100%;
+    width:100%;
+    }
+    .menu-limiter{
+     display: table-cell;
+    vertical-align: middle;
+    margin-top: 50px;
+    padding-left: 60px;
+    padding-right: 60px;
+    }
+ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 40px;
+      li{
+        display: block;
+
+      }
+    }
+    h4,a{
+      color:color(base,dark);
+    }
+    a{
+      opacity: .5;
+      line-height: 30px;
+      padding: 0;
+      transition: opacity 0.2s ease-in-out;
+      &:hover{
+        opacity: 1;
+      }
+  }
+
+  .menu > li > a{
+    padding: 0;
+    line-height: 30px;
+  }
+
+
+}
+
+.overlay-open{
+    overflow:hidden;
+}
+
+.menu-limiter{
+       @include grid-column(12);
+  
+    @include breakpoint(medium) {
+      @include grid-column(10);
+      @include grid-column-position(center);
+    }
+
+    @include breakpoint(large) {
+      @include grid-column(9);
+      @include grid-column-position(center);
+    }
+    .row{
+    position: relative;
+    }
+
+}
+
+a.closebtn{
+    position: absolute;
+    color: color(base, dark);
+    opacity: 1;
+
+    top:0px;
+    right:0;
+    @include breakpoint(medium) {
+        top:-40px;
+        right:-40px;
+    }
+}

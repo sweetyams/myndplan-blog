@@ -99,3 +99,17 @@ function wpdocs_custom_taxonomies_terms_links() {
     }
     return implode( '', $out );
 }
+
+
+//REMOVE YARPP CSS
+add_action( 'wp_print_styles', 'tj_deregister_yarpp_header_styles' );
+function tj_deregister_yarpp_header_styles() {
+   wp_dequeue_style('yarppWidgetCss');
+   // Next line is required if the related.css is loaded in header when disabled in footer.
+   wp_deregister_style('yarppRelatedCss'); 
+}
+
+add_action( 'wp_footer', 'tj_deregister_yarpp_footer_styles' );
+function tj_deregister_yarpp_footer_styles() {
+   wp_dequeue_style('yarppRelatedCss');
+}

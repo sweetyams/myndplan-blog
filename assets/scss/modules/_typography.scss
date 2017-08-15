@@ -7,6 +7,13 @@ $header-lineheights: (
     'h5': 28,
   ),
   medium: (
+    'h1': 36,
+    'h2': 32,
+    'h3': 28,
+    'h4': 26,
+    'h5': 30,
+  ),
+  large: (
     'h1': 42,
     'h2': 36,
     'h3': 30,
@@ -14,6 +21,7 @@ $header-lineheights: (
     'h5': 36,
   ),
 );
+
 
   // Heading sizes
   @each $size, $headers in $header-lineheights {
@@ -30,6 +38,11 @@ $header-lineheights: (
     font-family: "lora", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
   }
 
+  @mixin lora($weight: 400){
+    font-family: "lora", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+    font-weight: $weight;
+  }
+
   p{
     font-size: 1.1em;
   }
@@ -40,11 +53,32 @@ $header-lineheights: (
     letter-spacing: 0;
   }
 
-  h5{
-    opacity: .4;
+  h5 {
     text-transform: uppercase;
     font-family: $body-font-family;
     font-weight: 500;
     letter-spacing: .05em;
     margin-bottom: 0;
+    color: color(base,dark);
+    transition: color 0.2s ease-in-out;
+    span.divider{
+      display: inline-block;
+      margin-left: 6px;
+      margin-right: 6px;
+      height: 8px;
+      width:1px;
+      background: color(sky, dark)
+    }
+    a{
+    text-transform: uppercase;
+    font-family: $body-font-family;
+    font-weight: 500;
+    letter-spacing: .05em;
+    margin-bottom: 0;
+    color: color(base,dark);
+    transition: color 0.2s ease-in-out;
+    &:hover{
+      color: color(blue);
+    }
   }
+}

@@ -39,8 +39,25 @@
 </script>
 	</head>
 	<body <?php body_class(); ?>>
+
 	<?php do_action( 'foundationpress_after_body' ); ?>
 
+<div id="navigation" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+
+  <!-- Overlay content -->
+  <div class="row ">
+  	<div class="menu-limiter">
+
+  	<div class="row">
+  	  	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="icon-x"></span></a>
+
+	  <?php dynamic_sidebar( 'menu-widgets' ); ?>
+	  </div></div>
+  </div>
+
+</div>
 	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) == 'offcanvas' ) : ?>
 	<div class="off-canvas-wrapper">
 		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
@@ -49,15 +66,11 @@
 
 	<?php do_action( 'foundationpress_layout_start' ); ?>
 
+<!-- The overlay -->
+
+
 	<header id="masthead" class="site-header" role="banner">
 		<div class="row ">
-		<div class="title-bar" data-responsive-toggle="site-navigation">
-			<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
-			<div class="title-bar-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			</div>
-		</div>
-
 		<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
 			<div class="top-bar-left">
 				<a class="top-logo" href="<?php echo home_url(); ?>"><span class="icon-mp_icon"></span><span class="top-title">Blog</span></a>
@@ -68,20 +81,6 @@
 				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
 					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
 				<?php endif; ?>
-
-				<ul class="menu-icons">
-				<!-- <li><a><span class="icon-search"></span></a></li> -->
-				<?php if( have_rows('header_icons', 'options') ): 
-	    			while ( have_rows('header_icons', 'options') ) : the_row();
-			        ?>
-			        <li><a target="_blank" href="<?php the_sub_field('link'); ?>"><span class="icon-<?php the_sub_field('icon'); ?>"></span></a></li>
-			        <?php endwhile;
-					else :
- 				endif; ?>
-			</ul>
-
-			
-
 			</div>
 
 		</nav>
