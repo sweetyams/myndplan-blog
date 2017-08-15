@@ -158,7 +158,6 @@ gulp.task('javascript', function() {
     .pipe($.concat('foundation.js', {
       newLine:'\n;'
     }))
-    .pipe($.if(isProduction, uglify))
     .pipe($.if(!isProduction, $.sourcemaps.write()))
     .pipe(gulp.dest('assets/javascript'))
     .pipe(browserSync.stream());

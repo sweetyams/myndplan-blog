@@ -13,6 +13,7 @@
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.5s, visibility 0s 0.5s;
+    z-index: 1000000;
     &.open{
         opacity: 1;
     visibility: visible;

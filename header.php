@@ -51,7 +51,7 @@
   	<div class="menu-limiter">
 
   	<div class="row">
-  	  	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="icon-x"></span></a>
+  	  	  <a href="javascript:void(0)" class="closebtn" "><span class="icon-x"></span></a>
 
 	  <?php dynamic_sidebar( 'menu-widgets' ); ?>
 	  </div></div>
@@ -78,9 +78,7 @@
 			<div class="top-bar-right">
 				<?php foundationpress_top_bar_r(); ?>
 				
-				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) == 'topbar' ) : ?>
-					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-				<?php endif; ?>
+
 			</div>
 
 		</nav>
