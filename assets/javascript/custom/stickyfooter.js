@@ -13,6 +13,6 @@ $(window).bind(' load resize orientationChange ', function () {
    }
 
    if (height > 0) {
-     stickyFooter();
+     stickyFooter(); 
    }
 });

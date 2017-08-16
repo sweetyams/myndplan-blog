@@ -6,7 +6,6 @@
   
   li{
     position: relative;
-    
     transition: all .3s ease-in-out;
     font-size: 14px;
     padding-left: 16px;
@@ -55,7 +54,7 @@
     left:276px;
   }
 
-  &:hover{
+  &:hover, .active{
     .toc_widget_list > li{
     left: 0px;
     }

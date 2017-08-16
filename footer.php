@@ -31,6 +31,20 @@
 
 
 <?php wp_footer(); ?>
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]', {
+	// Selectors
+	ignore: '[data-scroll-ignore]', // Selector for links to ignore (must be a valid CSS selector)
+	header: null, // Selector for fixed headers (must be a valid CSS selector)
+
+	// Speed & Easing
+	speed: 500, // Integer. How fast to complete the scroll in milliseconds
+	offset: 50, // Integer or Function returning an integer. How far to offset the scrolling anchor location in pixels
+	easing: 'easeInOutCubic', // Easing pattern to use
+
+	// Callback API
+});
+</script>
 <?php do_action( 'foundationpress_before_closing_body' ); ?>
 </body>
 </html>

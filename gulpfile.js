@@ -65,6 +65,7 @@ var PATHS = {
     // Include your own custom scripts (located in the custom folder)
     'assets/javascript/custom/typekit-cache.js',
     'assets/javascript/custom/*.js',
+    
   ],
   phpcs: [
     '**/*.php',
